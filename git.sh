@@ -1,8 +1,4 @@
-#!/bin/bash 
-git --version
-if [ $? -eq 0 ]
-then 
-echo " git is installed"
-else 
-echo " git is not installed "
-fi
+#!/bin/bash
+echo "Current free ram available is..."
+
+free -m | awk -F " " '{print$3}' | head -2 | tail -1
